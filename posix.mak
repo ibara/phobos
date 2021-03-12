@@ -60,13 +60,13 @@ ifeq ($(PIC),)
     ifeq ($(MODEL),64) # x86_64
         PIC:=1
     else
-        PIC:=0
+        PIC:=1
     endif
 endif
 ifeq ($(PIC),1)
     override PIC:=-fPIC
 else
-    override PIC:=
+    override PIC:=-fPIC
 endif
 
 # Configurable stuff that's rarely edited
