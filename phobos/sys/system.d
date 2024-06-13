@@ -40,6 +40,7 @@ immutable
         dragonFlyBSD, /// DragonFlyBSD
         solaris,   /// Solaris
         android,   /// Android
+        haiku,     /// Haiku
         otherPosix, /// Other Posix Systems
         unknown,   /// Unknown
     }
@@ -57,6 +58,7 @@ immutable
     else version (NetBSD)  OS os = OS.netBSD;
     else version (OpenBSD) OS os = OS.openBSD;
     else version (DragonFlyBSD) OS os = OS.dragonFlyBSD;
+    else version (Haiku)   OS os = OS.haiku;
     else version (Posix)   OS os = OS.otherPosix;
     else OS os = OS.unknown;
 

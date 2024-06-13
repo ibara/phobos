@@ -1678,6 +1678,8 @@ version (DragonFlyBSD)
     version = LegacyARC4Random; // ARC4
 version (BSD)
     version = LegacyARC4Random; // Unknown implementation
+version (Haiku)
+    version = LegacyARC4Random; // Unknown implementation
 
 // For the current purpose of unpredictableSeed the difference between
 // a secure arc4random implementation and a legacy implementation is

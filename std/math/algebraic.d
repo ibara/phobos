@@ -611,6 +611,7 @@ else version (FreeBSD)      version = GenericPosixVersion;
 else version (OpenBSD)      version = GenericPosixVersion;
 else version (Solaris)      version = GenericPosixVersion;
 else version (DragonFlyBSD) version = GenericPosixVersion;
+else version (Haiku)        version = GenericPosixVersion;
 
 private real polyImpl(real x, in real[] A) @trusted pure nothrow @nogc
 {

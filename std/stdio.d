@@ -178,6 +178,10 @@ else version (Solaris)
 {
     version = GENERIC_IO;
 }
+else version (Haiku)
+{
+    version = GENERIC_IO;
+}
 else
 {
     static assert(0, "unsupported operating system");

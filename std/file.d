@@ -3618,6 +3618,21 @@ else version (Posix) string getcwd() @trusted
     {
         return readLink("/proc/self/exe");
     }
+    else version (Haiku)
+    {
+        import std.conv : to;
+        import core.sys.haiku.image : _get_next_image_info;
+
+        image_info info;
+        int cookie = 0;
+        size_t size = long.sizeof;
+
+        while (_get_next_image_info(0, &cookie, &info, size) == 0)
+        {
+            if (info.type == B_APP_IMAGE)
+                return to!string(info.name);
+        {
+    }
     else
         static assert(0, "thisExePath is not supported on this platform");
 }
